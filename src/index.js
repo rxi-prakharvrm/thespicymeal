@@ -1,18 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
-import Header from './Components/Header';
-import Body from './Components/Body';
-import About from './Components/About'
-import Contact from './Components/Contact'
-import SwiggyCorporate from './Components/SwiggyCorporate'
-import Search from './Components/Search';
-import Offers from './Components/Offers';
-import Help from './Components/Help';
-import SignIn from './Components/SignIn';
-import Cart from './Components/Cart';
-import ResMenu from './Components/ResMenu';
-import Error from './Components/Error'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Header from "./Components/Header";
+import Body from "./Components/Body";
+import About from "./Components/About";
+import Contact from "./Components/Contact";
+import SwiggyCorporate from "./Components/SwiggyCorporate";
+import Search from "./Components/Search";
+import Offers from "./Components/Offers";
+import Help from "./Components/Help";
+import SignIn from "./Components/SignIn";
+import Cart from "./Components/Cart";
+import ResMenu from "./Components/ResMenu";
+import Error from "./Components/Error";
+
+import "./index.css";
 
 const appRouter = createBrowserRouter([
   {
@@ -21,47 +23,47 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />
+        element: <Body />,
       },
       {
         path: "/swiggy-corporate",
-        element: <SwiggyCorporate />
+        element: <SwiggyCorporate />,
       },
       {
         path: "/search",
-        element: <Search />
+        element: <Search />,
       },
       {
         path: "/offers",
-        element: <Offers />
+        element: <Offers />,
       },
       {
         path: "/help",
-        element: <Help />
+        element: <Help />,
       },
       {
         path: "/signin",
-        element: <SignIn />
+        element: <SignIn />,
       },
       {
         path: "/cart",
-        element: <Cart />
+        element: <Cart />,
       },
       {
         path: "/about",
-        element: <About />
+        element: <About />,
       },
       {
         path: "/contact",
-        element: <Contact />
+        element: <Contact />,
       },
       {
         path: "/restaurants/:resId",
-        element: <ResMenu />
-      }
+        element: <ResMenu />,
+      },
     ],
-    errorElement: <Error />
-  }
+    errorElement: <Error />,
+  },
 ]);
 
 function App() {
@@ -70,8 +72,8 @@ function App() {
       <Header />
       <Outlet />
     </>
-  )
+  );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
