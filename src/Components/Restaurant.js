@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import ResCard from './ResCard';
 import ResNotFound from './ResNotFound';
+import ShimmerRestaurant from './ShimmerRestaurant';
 
 const Restaurant = () => {
     const [listOfRes, setListOfRes] = useState([]);
@@ -21,7 +22,9 @@ const Restaurant = () => {
         fetchResData();
     }, [])
 
-    return (
+    return listOfRes.length === 0 ? 
+        <ShimmerRestaurant /> 
+        : (
         <div className="res-list-ctr">
             <input type="text" id="search-res-box" placeholder="Search you favourite restaurant..." value={searchText} onChange={(e) => { setSearchText(e.target.value) }} />
 
@@ -39,16 +42,16 @@ const Restaurant = () => {
 
             {
                 isResFound ?
-                <div className="res-list">
-                    {filteredListOfRes.map((restaurant) => {
-                        return (
-                            <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
-                                <ResCard {...restaurant.info} />;
-                            </Link>
-                        )
-                    })}
-                </div> :
-                <ResNotFound />
+                    <div className="res-list">
+                        {filteredListOfRes.map((restaurant) => {
+                            return (
+                                <Link className="res-card-ctr" key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
+                                    <ResCard {...restaurant.info} />
+                                </Link>
+                            )
+                        })}
+                    </div> :
+                    <ResNotFound />
             }
         </div>
     );

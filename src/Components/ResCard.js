@@ -20,7 +20,7 @@ const ResCard = ({
                 <h4 className="res-area">{area}</h4>
                 <span className="res-rating">
                     <h4>
-                        <i className="fa-solid fa-star"></i>
+                        <span className="rating-start"><i className="fa-solid fa-star"></i></span>
                         {avgRating}
                     </h4>
                 </span>
@@ -31,4 +31,4 @@ const ResCard = ({
     )
 }
 
-export default ResCard;
+export default ResCard

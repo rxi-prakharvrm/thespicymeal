@@ -15,6 +15,7 @@ body {
 }
 
 .header-ctr {
+    height: 10rem;
     width: 100vw;
     padding: 0 10rem;
     background-color: #fff;
@@ -53,8 +54,10 @@ body {
 
 /* Food Container */
 .more-food-left, .more-food-right {
-    padding: 1rem;
-    margin: 0 2rem;
+    height: 5rem;
+    width: 5rem;
+    padding: 0.5rem;
+    margin: 0 1.6rem;
     font-size: 2.2rem;
     border: none;
     outline: none;
@@ -65,7 +68,8 @@ body {
 }
 
 .food-outer-ctr {
-    padding: 5rem 20rem;
+    padding: 0rem 20rem;
+    margin-bottom: 5rem;
     width: 100vw;
     display: flex;
     flex-wrap: nowrap;
@@ -102,9 +106,6 @@ body {
 
 /* Food Card */
 .food-card {
-    width: 15rem;
-    height: 22rem;
-    padding: 1rem;
     text-align: center;
     display: flex;
     flex-wrap: nowrap;
@@ -115,12 +116,49 @@ body {
 }
 
 #food-img {
+    width: 15rem;
     display: block;
-    width: 100%;
 }
 
 #food-name {
     padding: 1rem 0;
+}
+
+/* Shimmer Food Container */
+.shimmer-food-outer-ctr {
+    height: 29rem;
+    width: 100vw;
+    padding: 0 20rem;
+    margin-bottom: 5rem;
+}
+
+.shimmer-food-ctr {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-betwen;
+    align-items: center;
+    align-items: center;
+}
+
+.shimmer-food-header-ctr {
+    width: 100%;
+    height: 6rem;
+    margin: 2rem 0;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shimmer-food-cards-ctr {
+    height: 20rem;
+    width: 100%;
+    background-color: #f1f1f1;
+    overflow: hidden;
 }
 
 /* Restaurant */
@@ -139,19 +177,37 @@ body {
     font-size: 1.8rem;
     color: #333;
     outline: none;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    transition: 0.2s ease;
+    border-radius: 5px;
+}
+
+#search-res-box:hover {
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
 }
 
 #search-res-btn {
     padding: 1rem 1.6rem;
     font-size: 1.8rem;
     margin-left: 1rem;
+    background-color: rgb(90, 90, 235);
+    color: #fff;
+    border: none;
     outline: none;
     cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+#search-res-btn:hover {
+    /* background-color: rgb(115, 115, 236); */
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
 }
 
 .res-list-ctr {
     width: 100%;
-    padding: 0 8rem;
+    padding: 0 10rem;
     text-align: center;
 }
 
@@ -165,9 +221,14 @@ body {
     gap: 4rem;
 }
 
+.res-card-ctr {
+    text-decoration: none;
+}
+
 .res-card {
     width: 25rem;
-    height: 32rem;
+    height: 33rem;
+    background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
     display: flex;
     flex-wrap: nowrap;
@@ -197,11 +258,45 @@ body {
 }
 
 .res-name {
-    color: #333;
+    color: #282828;
     padding: 1rem 2rem 0;
 }
 
 .res-cuisines, .res-area, .res-rating, .res-last-mile, .res-cost {
-    color: #444;
+    color: #555;
     padding: 0.3rem 0;
+}
+
+.rating-start {
+    color: rgb(234, 199, 2);
+    margin-right: 1rem;
+}
+
+/* Shimmer Restaurant */
+.shimmer-res-list-ctr {
+    height: 33rem;
+    width: 100%;
+    padding: 0 10rem;
+    text-align: center;
+}
+
+.shimmer-search-bar {
+    display: inline-block;
+    height: 5rem;
+    width: 50rem;
+    margin-bottom: 5rem;
+    background-color: #f1f1f1;
+}
+
+.shimmer-res-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shimmer-res-card {
+    height: 33rem;
+    width: 25rem;
+    background-color: #f1f1f1;
 }

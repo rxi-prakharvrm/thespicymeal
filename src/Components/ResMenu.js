@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import RESMENU_API from '../utils/Constants';
-import Shimmer from './Shimmer';
 
 const ResMenu = () => {
     const [resInfo, setResInfo] = useState(null);
@@ -24,9 +23,7 @@ const ResMenu = () => {
 
     useEffect(() => {
         fetchMenu();
-    }, [resId]);
-
-    if (resInfo === null) return <Shimmer />;
+    }, [resId]);    
 
     const { name } = resInfo?.cards[2]?.card?.card?.info || {};
 
