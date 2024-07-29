@@ -14,6 +14,19 @@ body {
     overflow-x: hidden;
 }
 
+.offline-status-msg {
+    text-align: center;
+    color: #bbb;
+    margin-top: 20%;
+    font-size: 4rem;
+}
+
+.status {
+    padding-right: 1rem;
+    margin-right: 1rem;
+    border-right: 1px solid #ddd;
+}
+
 .header-ctr {
     height: 10rem;
     width: 100vw;
@@ -43,13 +56,28 @@ body {
 }
 
 .item {
-    padding: 0 2.2rem;
+    padding: 0 1.6rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.item:first-child {
+    margin: 0 1.6rem;
+    padding: 1rem;
+    font-weight: bold;
+    color: #4d4d4d;
+    border: 1px solid #4d4d4d;
+    border-radius: 5rem;
 }
 
 .item a {
     text-decoration: none;
     color: #333;
-    font-weight: bold;
+    transition: 0.125s ease-in;
+}
+
+.item a:hover {
+    color: #df734a;
 }
 
 /* Food Container */
@@ -320,13 +348,9 @@ body {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    line-height: 2;
+    line-height: 1.5;
     border: 1px solid #ddd;
     border-radius: 10px;
-}
-
-.dish-outer-ctr:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .dish-details-ctr {
@@ -334,15 +358,31 @@ body {
     width: 80%;
 }
 
+.dish-veg-classifier img {
+    height: 2rem;
+}
+
+.dish-price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #df734a;
+}
+
+.dish-description {
+    padding: 1rem 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
 .dish-image-ctr {
-    height: 200px;
-    width: 200px;
+    height: 20rem;
+    width: 20rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .dish-image {
-    height: 120px;
-    width: 120px;
+    height: 80%;
+    width: 80%;
 }
