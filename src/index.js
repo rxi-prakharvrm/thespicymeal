@@ -5,8 +5,6 @@ import Header from "./Components/Header";
 import Body from "./Components/Body";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
-import SwiggyCorporate from "./Components/SwiggyCorporate";
-import Search from "./Components/Search";
 import Offers from "./Components/Offers";
 import Help from "./Components/Help";
 import SignIn from "./Components/SignIn";
@@ -24,14 +22,6 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <Body />,
-      },
-      {
-        path: "/swiggy-corporate",
-        element: <SwiggyCorporate />,
-      },
-      {
-        path: "/search",
-        element: <Search />,
       },
       {
         path: "/offers",

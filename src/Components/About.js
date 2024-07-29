@@ -1,11 +1,21 @@
-import React from 'react'
+import {Component} from 'react'
+import User from './User'
 
-const About = () => {
-    return (
-        <>
-            <h1>About Page</h1>
-        </>
-    )
+class About extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+    }
+
+    render() {
+        return (
+            <>
+                <User />
+            </>
+        )
+    }
 }
 
 export default About;

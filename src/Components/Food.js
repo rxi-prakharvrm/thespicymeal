@@ -23,7 +23,7 @@ const Food = () => {
 
     const handleLeftClick = () => {
         const foodCards = document.querySelector(".food-cards");
-        foodCards.style.transition = "1s ease";
+        foodCards.style.transition = "1s ease-in-out";
         if (foodCards && shiftRightBy <= 0) {
             let newShift = shiftRightBy + 50;
             setShiftRightBy(newShift);
