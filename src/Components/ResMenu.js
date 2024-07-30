@@ -29,7 +29,7 @@ const ResMenu = () => {
                         <p className="mb-4 text-4xl font-bold text-amber-600">₹{(item.card.info.defaultPrice || item.card.info.price) / 100}</p>
                         <p className="text-gray-600 text-2xl">{item.card.info.description}</p>
                     </div>
-                    <div className="w-1/4 h-64 bg-cover relative">
+                    <div className="w-1/4 bg-cover relative">
                         {item.card.info.imageId !== undefined ? (
                             <img
                                 className="rounded-xl w-full h-full shadow-2xl shadow-gray-400"
