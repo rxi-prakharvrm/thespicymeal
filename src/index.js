@@ -5,8 +5,6 @@ import Header from "./Components/Header";
 import Body from "./Components/Body";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
-import Offers from "./Components/Offers";
-import Help from "./Components/Help";
 import SignIn from "./Components/SignIn";
 import Cart from "./Components/Cart";
 import ResMenu from "./Components/ResMenu";
@@ -25,14 +23,6 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <Body />,
-      },
-      {
-        path: "/offers",
-        element: <Offers />,
-      },
-      {
-        path: "/help",
-        element: <Help />,
       },
       {
         path: "/signin",

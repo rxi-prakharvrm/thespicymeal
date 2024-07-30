@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     margin: 0;
     padding: 0;
@@ -12,72 +16,6 @@ body {
     font-size: 1.6rem;
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
-}
-
-.offline-status-msg {
-    text-align: center;
-    color: #bbb;
-    margin-top: 20%;
-    font-size: 4rem;
-}
-
-.status {
-    padding-right: 1rem;
-    margin-right: 1rem;
-    border-right: 1px solid #ddd;
-}
-
-.header-ctr {
-    height: 10rem;
-    width: 100vw;
-    padding: 0 10rem;
-    background-color: #fff;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 2px 2px 15px #dcdcdc;
-    position: sticky;
-    top: 0;
-    left: 0;
-}
-
-.logo img {
-    width: 10rem;
-}
-
-.menu-items {
-    list-style: none;
-    padding: 1.6rem 0;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.item {
-    padding: 0 1.6rem;
-    font-weight: bold;
-    color: #333;
-}
-
-.item:first-child {
-    margin: 0 1.6rem;
-    padding: 1rem;
-    font-weight: bold;
-    color: #4d4d4d;
-    border: 1px solid #4d4d4d;
-    border-radius: 5rem;
-}
-
-.item a {
-    text-decoration: none;
-    color: #333;
-    transition: 0.125s ease-in;
-}
-
-.item a:hover {
-    color: #df734a;
 }
 
 /* Food Container */
@@ -335,6 +273,9 @@ body {
     width: 100vw;
     height: auto;
     padding: 5rem 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .res-menu-header {
@@ -342,12 +283,12 @@ body {
 }
 
 .dish-outer-ctr {
+    max-width: 100rem;
     width: 100%;
     margin: 5rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     line-height: 1.5;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -385,4 +326,35 @@ body {
 .dish-image {
     height: 80%;
     width: 80%;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 1300px) {
+    .res-menu-outer-ctr {
+        padding: 0 15rem;
+    }
+
+    .dish-outer-ctr {
+        margin: 4rem 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .res-menu-outer-ctr {
+        padding: 0 8rem;
+    }
+
+    .dish-outer-ctr {
+        margin: 3rem 0;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .res-menu-outer-ctr {
+        padding: 0 3rem;
+    }
+
+    .dish-outer-ctr {
+        margin: 2rem 0;
+    }
 }
