@@ -5,7 +5,7 @@ import Logo from "../images/logo.png";
 
 const Header = () => {
   return (
-    <div className="w-full flex justify-center items-center shadow-md shadow-gray-200">
+    <div className="w-full flex justify-center items-center sticky top-0 left-0 bg-white z-10 shadow-md shadow-gray-200">
       <div className="w-full px-36 max-w-screen-2xl flex flex-row flex-nowrap justify-between items-center">
         <div dir="ltr">
           <Link to="/" className="block w-36">

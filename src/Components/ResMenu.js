@@ -19,17 +19,17 @@ const ResMenu = () => {
     if (!itemCards) return <div>No items available</div>;
 
     return (
-        <div className="py-24 px-12 xl:px-96 lg:px-64 md:px-48 sm:px-24">
+        <div className="py-24 px-12 xl:px-96 lg:px-64 md:px-48 sm:px-24 flex flex-col justify-center items-center">
             <h1 className="mb-24 font-extrabold text-6xl text-center text-gray-800">{name}</h1>
             {itemCards.map((item) => (
-                <div className="py-16 border-t-2 border-gray-200 flex justify-between items-center" key={item.card.info.id}>
-                    <div className="w-2/3 mr-16">
+                <div className="w-full max-w-7xl py-16 border-t-2 border-gray-200 flex justify-between items-center" key={item.card.info.id}>
+                    <div className="w-2/4 mr-16">
                         {item.card.info.itemAttribute.vegClassifier === "VEG" ? <img className="mb-4 w-8" src={vegImg} /> : <img className="mb-4 w-8" src={nonVegImg} />}
                         <h2 className="mb-4 text-4xl font-bold">{item.card.info.name}</h2>
                         <p className="mb-4 text-4xl font-bold text-amber-600">₹{(item.card.info.defaultPrice || item.card.info.price) / 100}</p>
                         <p className="text-gray-600 text-2xl">{item.card.info.description}</p>
                     </div>
-                    <div className="w-1/4 bg-cover relative">
+                    <div className="w-1/4 h-64 relative">
                         {item.card.info.imageId !== undefined ? (
                             <img
                                 className="rounded-xl w-full h-full shadow-2xl shadow-gray-400"

@@ -27,9 +27,8 @@ const Food = () => {
     }, []);
 
     const handleLeftClick = () => {
-        const foodCards = document.querySelector(".food-cards");
-        foodCards.style.transition = "1s ease-in-out";
-        if (foodCards && shiftRightBy <= -50) {
+        foodCardsRef.current.style.transition = "1s ease-in-out";
+        if (foodCardsRef && shiftRightBy <= -50) {
             let newShift = shiftRightBy + 50;
             setShiftRightBy(newShift);
             console.log(shiftRightBy);
@@ -37,9 +36,8 @@ const Food = () => {
     };
 
     const handleRightClick = () => {
-        const foodCards = document.querySelector(".food-cards");
-        foodCards.style.transition = "1s ease-in-out";
-        if (foodCards && shiftRightBy >= -250) {
+        foodCardsRef.current.style.transition = "1s ease-in-out";
+        if (foodCardsRef && shiftRightBy >= -250) {
             let newShift = shiftRightBy - 50;
             console.log(shiftRightBy);
             setShiftRightBy(newShift);
