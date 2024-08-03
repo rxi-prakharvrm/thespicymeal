@@ -53,24 +53,26 @@ const Food = () => {
     return foodList.length === 0 ? (
         <ShimmerFood />
     ) : (
-        <div className="food-outer-ctr">
-            <div className="food-ctr">
-                <div className="food-header-ctr">
-                    <h2 className="food-header">What's on your mind?</h2>
-                    <div className="more-food-btns-ctr">
-                        <button className="more-food-left" onClick={handleLeftClick}>
-                            <i className="fa-solid fa-chevron-left"></i>
-                        </button>
-                        <button className="more-food-right" onClick={handleRightClick}>
-                            <i className="fa-solid fa-chevron-right"></i>
-                        </button>
+        <div className="flex flex-nowrap justify-center items-center">
+            <div className="w-[100rem] max-w-[100rem] pt-[2rem] pb-[5rem] flex flex-nowrap justify-center items-center">
+                <div className="w-full">
+                    <div className="h-[4rem] py-[4rem] flex flex-nowrap justify-between items-center">
+                        <h2 className="text-4xl font-bold">What's on your mind?</h2>
+                        <div>
+                            <button className="h-[5rem] w-[5rem] p-[0.5rem] mx-[1.6rem] text-2xl border-none outline-none bg-[#f1f1f1] border-2 border-[#f1f1f1] rounded-[3rem] cursor-pointer" onClick={handleLeftClick}>
+                                <i className="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button className="h-[5rem] w-[5rem] p-[0.5rem] mx-[1.6rem] text-2xl border-none outline-none bg-[#f1f1f1] border-2 border-[#f1f1f1] rounded-[3rem] cursor-pointer" onClick={handleRightClick}>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div className="food-cards-ctr">
-                    <div className="food-cards" ref={foodCardsRef}>
-                        {foodList.map((food) => (
-                            <FoodCard key={food.id} {...food} />
-                        ))}
+                    <div className="s-full overflow-hidden">
+                        <div className="w-[2000rem] flex justify-left items-center gap-[50px]" ref={foodCardsRef}>
+                            {foodList.map((food) => (
+                                <FoodCard key={food.id} {...food} />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
