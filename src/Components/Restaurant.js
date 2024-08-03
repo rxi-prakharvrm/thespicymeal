@@ -18,7 +18,7 @@ const Restaurant = () => {
     return listOfRes.length === 0 ? 
         <ShimmerRestaurant /> 
         : (
-        <div className="res-list-ctr">
+        <div className="text-center bg-gray-100 py-24">
             {/* Filter restraunts based on its name */}
             <input type="text" id="search-res-box" placeholder="Search you favourite restaurant..." value={searchText} onChange={(e) => { setSearchText(e.target.value) }} />
 

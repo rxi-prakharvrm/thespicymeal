@@ -55,10 +55,10 @@ const appRouter = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <div>
       <Header />
       <Outlet />
-    </>
+    </div>
   );
 }
 
