@@ -32,4 +32,4 @@ Due to the use of live APIs, you may encounter CORS policy issues when accessing
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by Prakhar
