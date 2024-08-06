@@ -54,7 +54,7 @@ const Food = () => {
         <ShimmerFood />
     ) : (
         <div className="flex flex-nowrap justify-center items-center">
-            <div className="w-[100rem] max-w-[100rem] pt-[2rem] pb-[5rem] flex flex-nowrap justify-center items-center">
+            <div className="max-w-[96rem] pt-[2rem] pb-[5rem] flex flex-nowrap justify-center items-center">
                 <div className="w-full">
                     <div className="h-[4rem] py-[4rem] flex flex-nowrap justify-between items-center">
                         <h2 className="text-4xl font-bold">What's on your mind?</h2>
