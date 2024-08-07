@@ -5,6 +5,9 @@ Welcome to **The Spicy Meal**, your ultimate destination for ordering delicious 
 ## 🚀 Live Demo
 Check out the live website here: [thespicymeal.vercel.app](https://thespicymeal.vercel.app)
 
+## ⚠️ CORS Policy
+Due to the use of live APIs, you may encounter CORS policy issues when accessing the website. To resolve this, please install the CORS Chrome extension. Once installed, everything should work smoothly.
+
 ## 🎯 Purpose
 **The Spicy Meal** was created as a project-based learning endeavor to master React.js. By building this online food ordering website, I explored various concepts and functionalities of React.js, gaining practical experience in web development.
 
@@ -21,9 +24,6 @@ Check out the live website here: [thespicymeal.vercel.app](https://thespicymeal.
 - **Interactive UI**: Enjoy a smooth and engaging user experience with React.js.
 - **Fast Loading**: Experience quick load times with efficient data fetching and React optimization.
 - **Shimmer UI Effects**: Provides a smooth and visually appealing loading experience.
-
-## ⚠️ CORS Policy
-Due to the use of live APIs, you may encounter CORS policy issues when accessing the website. To resolve this, please install the CORS Chrome extension. Once installed, everything should work smoothly.
 
 ## 📸 Screenshots
 ![Home Page](screenshots/homepage.png)
