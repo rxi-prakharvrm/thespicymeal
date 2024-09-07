@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import User from './User'
+import '../index.css';
 
 class About extends Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class About extends Component {
     render() {
         return (
             <>
-                <User />
+                <h1 className="about">About</h1>
             </>
         )
     }

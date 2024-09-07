@@ -94,3 +94,9 @@ body {
     margin: 2rem 1rem;
     background-color: #dcdcdc;
 }
+
+/* About */
+.about-ctr {
+    padding: 10rem 0;
+    text-align: center;
+}
