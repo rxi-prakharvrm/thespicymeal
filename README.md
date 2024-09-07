@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# The Spicy Meal 🍽️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to **The Spicy Meal**, your ultimate destination for ordering delicious meals online! This project was built to enhance my skills in React.js through a hands-on learning experience. Dive in to explore the tasty features and the tech stack behind it!
 
-## Available Scripts
+## 🚀 Live Demo
+Check out the live website here: [thespicymeal.vercel.app](https://thespicymeal.vercel.app)
 
-In the project directory, you can run:
+## ⚠️ CORS Policy
+Due to the use of live APIs, you may encounter CORS policy issues when accessing the website. To resolve this, please install the CORS Chrome extension. Once installed, everything should work smoothly.
 
-### `npm start`
+## 🎯 Purpose
+**The Spicy Meal** was created as a project-based learning endeavor to master React.js. By building this online food ordering website, I explored various concepts and functionalities of React.js, gaining practical experience in web development.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠 Tech Stack
+- **React.js**: A powerful JavaScript library for building user interfaces.
+- **JSX**: A syntax extension for JavaScript, used with React to describe what the UI should look like.
+- **Tailwind CSS**: A utility-first CSS framework for styling the application.
+- **Live APIs**: Integration of real-time data to fetch and display the latest food items and deals.
+- **Shimmer UI**: Used for a smooth user experience with visually appealing loading states.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🌟 Features
+- **Real-Time Menu**: Browse through our dynamic menu with live updates.
+- **Responsive Design**: Seamlessly accessible on all devices, thanks to Tailwind CSS.
+- **Interactive UI**: Enjoy a smooth and engaging user experience with React.js.
+- **Fast Loading**: Experience quick load times with efficient data fetching and React optimization.
+- **Shimmer UI Effects**: Provides a smooth and visually appealing loading experience.
 
-### `npm test`
+## 📸 Screenshots
+![Home Page](screenshots/homepage.png)
+![Menu Page](screenshots/menu-items.png)
+![Restaurants List](screenshots/retaurants-list.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made with ❤️ by Prakhar
