@@ -38,7 +38,6 @@ const Food = () => {
         foodCardsRef.current.style.transition = "1s ease-in-out";
         if (foodCardsRef && shiftRightBy >= -250) {
             let newShift = shiftRightBy - 50;
-            console.log(shiftRightBy);
             setShiftRightBy(newShift);
         }
     };

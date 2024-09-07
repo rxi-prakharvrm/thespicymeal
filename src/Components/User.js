@@ -14,8 +14,6 @@ class User extends React.Component {
             const data = await fetch('https://dummyjson.com/users');
             const json = await data.json();
     
-            console.log(json.users);
-    
             const allUsers = await Promise.all(
                 json.users.map(async (item) => {
                     const userData = await fetch(`https://dummyjson.com/users/${item.id}`);
@@ -36,8 +34,7 @@ class User extends React.Component {
         return (
             <div className="w-full p-2xl my-[5rem] flex justify-center items-center flex-wrap">
                 {this.state.usersInfo.map((userInfo) => {
-                    const { id, image, firstName, address, company } = userInfo;
-                    // const fullAddress = `${address?.address}, ${address?.city}, ${address?.state}, ${address?.country}`;
+                    const { id, image, firstName, company } = userInfo;
                     const jobTitle = company?.title;
 
                     return (
@@ -45,7 +42,6 @@ class User extends React.Component {
                             <img className="m-4" src={image} alt={`${firstName}'s avatar`} />
                             <h2 className="text-4xl m-4">{firstName}</h2>
                             <p className="text-2xl m-4">{jobTitle}</p>
-                            {/* <p className="text-2xl text-gray-600 text-center">{fullAddress}</p> */}
                         </div>
                     );
                 })}

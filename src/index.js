@@ -14,7 +14,6 @@ import "./index.css";
 
 const Grocery = lazy(() => import("./Components/Grocery"));
 
-
 const appRouter = createBrowserRouter([
   {
     path: "/",
