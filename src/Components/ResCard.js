@@ -10,7 +10,7 @@ const ResCard = ({
     avgRating,
 }) => {
     return (
-        <div className="w-[25rem] h-[33rem] flex flex-col justify-self-start items-center bg-white shadow-sm shadow-slate-400 hover:shadow-xl hover:shadow-slate-300 hover:-mt-4 transition-all ease-in-out delay-50 rounded-lg">
+        <div className="w-[25rem] h-[35rem] flex flex-col justify-self-start items-center bg-white shadow-sm shadow-slate-400 hover:shadow-xl hover:shadow-slate-300 hover:-mt-4 transition-all ease-in-out delay-50 rounded-lg">
             <div className="h-64 w-full">
                 <img className="h-full w-full rounded-t-lg" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} alt="Restaurant" />
             </div>

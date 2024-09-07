@@ -31,7 +31,6 @@ const Food = () => {
         if (foodCardsRef && shiftRightBy <= -50) {
             let newShift = shiftRightBy + 50;
             setShiftRightBy(newShift);
-            console.log(shiftRightBy);
         }
     };
 
@@ -40,7 +39,6 @@ const Food = () => {
         if (foodCardsRef && shiftRightBy >= -250) {
             let newShift = shiftRightBy - 50;
             console.log(shiftRightBy);
-            setShiftRightBy(newShift);
         }
     };
 

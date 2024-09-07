@@ -12,7 +12,8 @@ class About extends Component {
     render() {
         return (
             <>
-                <h1 className="about">About</h1>
+                {/* <h1 className="about">About</h1> */}
+                <User />
             </>
         )
     }
