@@ -96,7 +96,13 @@ body {
 }
 
 /* About */
-.about-ctr {
-    padding: 10rem 0;
+.about, .contact, .grocery, .signin, .cart {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    font-weight: 800;
+    color: #ddd;
     text-align: center;
 }
