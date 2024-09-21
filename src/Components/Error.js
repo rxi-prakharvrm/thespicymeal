@@ -5,11 +5,10 @@ const Error = () => {
     const err = useRouteError();
 
     return (
-        <>
-            <h1>Opps!!!</h1>
-            <h1>Something went wrong!</h1>
+        <div className="flex flex-col justify-center items-center w-[100vw] h-[100vh] text-[2.2rem] text-gray-600">
+            <h1>Opps!!! Some error occurred!</h1> <br />
             <h4>{err.status}: {err.statusText}</h4>
-        </>
+        </div>
     )
 }
 
