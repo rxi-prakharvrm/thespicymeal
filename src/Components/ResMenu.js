@@ -29,10 +29,10 @@ const ResMenu = () => {
                         <p className="mb-4 text-4xl font-bold text-amber-600">₹{(item.card.info.defaultPrice || item.card.info.price) / 100}</p>
                         <p className="text-gray-600 text-2xl">{item.card.info.description}</p>
                     </div>
-                    <div className="w-1/4 h-64 relative">
+                    <div className="relative">
                         {item.card.info.imageId !== undefined ? (
                             <img
-                                className="rounded-xl w-full h-full shadow-2xl shadow-gray-400"
+                                className="rounded-xl w-[20rem] h-[20rem] shadow-2xl shadow-gray-400 background-cover"
                                 src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${item.card.info.imageId}`}
                                 alt={item.card.info.name}
                             />

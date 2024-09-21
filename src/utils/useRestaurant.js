@@ -24,8 +24,9 @@ const useRestaurant = () => {
         fetchResData();
     }, [])
     
-    if(onlineStatus === false) return <h1 className="offline-status-msg">Looks like you're offline!</h1>
-    return { listOfRes, filteredListOfRes, setFilteredListOfRes };
+    return onlineStatus ? 
+    { listOfRes, filteredListOfRes, setFilteredListOfRes } :
+    <h1 className="offline-status-msg">Looks like you're offline!</h1>
 }
 
 export default useRestaurant;

@@ -22,8 +22,10 @@ const useResMenu = () => {
         fetchMenu();
     }, [resId]);
     
-    if(onlineStatus === false) return <h1 className="flex justify-center items-center flex-col w-[100vw] h-[100vh] text-[2.2rem] text-gray-400"><span>Looks like you're offline!</span></h1>
-    return ({resInfo});
+    return (
+        onlineStatus ? {resInfo} :
+        <h1 className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[2.2rem] text-gray-400"><span>Looks like you're offline!</span></h1>
+    )
 }
 
 export default useResMenu;
