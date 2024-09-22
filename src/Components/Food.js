@@ -51,22 +51,22 @@ const Food = () => {
     return foodList.length === 0 ? (
         <ShimmerFood />
     ) : (
-        <div className="flex flex-nowrap justify-center items-center">
-            <div className="max-w-[96rem] pt-[2rem] pb-[5rem] flex flex-nowrap justify-center items-center">
+        <div className="w-full flex flex-nowrap justify-center items-center">
+            <div className="w-[90%] sm:w-[48rem] md:w-[72rem] lg:w-[96rem] mb-16 mt-8 flex flex-nowrap justify-center items-center">
                 <div className="w-full">
                     <div className="h-[4rem] py-[4rem] flex flex-nowrap justify-between items-center">
-                        <h2 className="text-4xl font-bold">What's on your mind?</h2>
+                        <h2 className="text-3xl sm:text-4xl font-bold">What's on your mind?</h2>
                         <div>
-                            <button className="h-[5rem] w-[5rem] p-[0.5rem] mx-[1.6rem] text-2xl border-none outline-none bg-[#f1f1f1] border-2 border-[#f1f1f1] rounded-[3rem] cursor-pointer" onClick={handleLeftClick}>
+                            <button className="h-[3rem] sm:h-[5rem] w-[3rem] sm:w-[5rem] text-lg sm:text-2xl border-none outline-none bg-[#f1f1f1] border-2 border-[#f1f1f1] rounded-[3rem] cursor-pointer" onClick={handleLeftClick}>
                                 <i className="fa-solid fa-chevron-left"></i>
                             </button>
-                            <button className="h-[5rem] w-[5rem] p-[0.5rem] mx-[1.6rem] text-2xl border-none outline-none bg-[#f1f1f1] border-2 border-[#f1f1f1] rounded-[3rem] cursor-pointer" onClick={handleRightClick}>
+                            <button className="h-[3rem] sm:h-[5rem] w-[3rem] sm:w-[5rem] ml-[1.6rem] sm:ml-[3.2rem] text-lg sm:text-2xl border-none outline-none bg-[#f1f1f1] border-2 border-[#f1f1f1] rounded-[3rem] cursor-pointer" onClick={handleRightClick}>
                                 <i className="fa-solid fa-chevron-right"></i>
                             </button>
                         </div>
                     </div>
-                    <div className="s-full overflow-hidden">
-                        <div className="w-[2000rem] flex justify-left items-center gap-[50px]" ref={foodCardsRef}>
+                    <div className="py-4 w-full flex overflow-x-scroll">
+                        <div className="flex justify-left items-center shrink-0 gap-8 md:gap-12 lg:gap-16" ref={foodCardsRef}>
                             {foodList.map((food) => (
                                 <FoodCard key={food.id} {...food} />
                             ))}

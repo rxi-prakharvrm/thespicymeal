@@ -19,11 +19,11 @@ const ResMenu = () => {
     if (!itemCards) return <div>No items available</div>;
 
     return (
-        <div className="py-24 px-12 xl:px-96 lg:px-64 md:px-48 sm:px-24 flex flex-col justify-center items-center">
-            <h1 className="mb-24 font-extrabold text-6xl text-center text-gray-800">{name}</h1>
+        <div className="max-w-[72rem] w-[90%] p-4 sm:p-8 md:p-12 lg:p-16 mx-auto flex flex-col justify-center items-center">
+            <h1 className="my-24 font-extrabold text-4xl md:text-6xl text-center text-gray-800">{name}</h1>
             {itemCards.map((item) => (
-                <div className="w-full max-w-7xl py-16 border-t-2 border-gray-200 flex justify-between items-center" key={item.card.info.id}>
-                    <div className="w-2/4 mr-16">
+                <div className="w-full max-w-7xl py-16 border-t-2 border-gray-200 flex flex-col sm:flex-row justify-between items-center" key={item.card.info.id}>
+                    <div className="w-[90%] sm:w-2/4 mr-0 sm:mr-16">
                         {item.card.info.itemAttribute.vegClassifier === "VEG" ? <img className="mb-4 w-8" src={vegImg} /> : <img className="mb-4 w-8" src={nonVegImg} />}
                         <h2 className="mb-4 text-4xl font-bold">{item.card.info.name}</h2>
                         <p className="mb-4 text-4xl font-bold text-amber-600">₹{(item.card.info.defaultPrice || item.card.info.price) / 100}</p>
@@ -32,7 +32,7 @@ const ResMenu = () => {
                     <div className="relative">
                         {item.card.info.imageId !== undefined ? (
                             <img
-                                className="rounded-xl w-[20rem] h-[20rem] shadow-2xl shadow-gray-400 background-cover"
+                                className="mt-12 sm:mt-0 rounded-xl w-[20rem] h-[20rem] shadow-2xl shadow-gray-400 background-cover"
                                 src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${item.card.info.imageId}`}
                                 alt={item.card.info.name}
                             />

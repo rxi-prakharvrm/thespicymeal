@@ -10,9 +10,9 @@ const ResCard = ({
     avgRating,
 }) => {
     return (
-        <div className="w-[25rem] h-[35rem] flex flex-col justify-self-start items-center bg-white shadow-sm shadow-slate-400 hover:shadow-xl hover:shadow-slate-300 hover:-mt-4 transition-all ease-in-out delay-50 rounded-lg">
-            <div className="h-64 w-full">
-                <img className="h-full w-full rounded-t-lg" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} alt="Restaurant" />
+        <div className="h-full p-2 justify-self-stretch flex flex-col items-center bg-white shadow-sm shadow-slate-400 hover:shadow-2xl hover:shadow-slate-300 transition-all ease-in-out delay-50 rounded-lg">
+            <div className="h-[18rem] w-full overflow-hidden flex justify-center items-center rounded-t-lg">
+                <img className="w-full" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} alt="Restaurant" />
             </div>
             <h3 className="text-3xl text-gray-800 font-semibold px-4 py-8">{name}</h3>
             <div className="p-2 text-2xl text-gray-600 font-semibold">
