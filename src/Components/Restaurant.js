@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import ResCard from './ResCard';
 import ResNotFound from './ResNotFound';
-import ShimmerRestaurant from './ShimmerRestaurant';
+import Shimmer from './Shimmer';
 import useRestaurant from '../utils/useRestaurant';
 
 // Shows the restaurants
@@ -27,14 +27,14 @@ const Restaurant = () => {
     
     // If listOfRes contains nothing, show shimmer UI
     return listOfRes.length === 0 ?
-        <ShimmerRestaurant />
+        <Shimmer />
         : (
             <div className="py-16 text-center  bg-[#f1f1f1]">
                 {/* Filter restraunts based on its name */}
                 <div className="w-[90%] mx-auto flex justify-center items-center">
                     <input className="max-w-[90%] w-[40rem] py-4 px-[1.6rem] text-[1.4rem] sm:text-[1.8rem] text-gray-600 outline-none bg-white border-2 border-solid border-gray-200 transition-all hover:shadow-xl hover:shadow-gray-200 rounded-xl" type="text" placeholder="Search you favourite restaurant..." value={searchText} onChange={(e) => { 
                         setSearchText(e.target.value)
-                        searchcall();                    
+                        searchcall()         
                     }} />
 
                     <input className="py-4 ml-4 px-[1.6rem] text-[1.4rem] sm:text-[1.8rem] outline-none bg-[#5a5aeb] text-white transition-all hover:shadow-xl hover:shadow-[#64646f4d] rounded-xl cursor-pointer" type="button" value="Search" onClick={() => {

@@ -1,4 +1,4 @@
-import ShimmerFood from './ShimmerFood';
+import Shimmer from './Shimmer';
 import useResMenu from '../utils/useResMenu';
 import vegImg from '../images/vegetarian.png';
 import nonVegImg from '../images/non-vegetarian.png';
@@ -6,7 +6,7 @@ import nonVegImg from '../images/non-vegetarian.png';
 const ResMenu = () => {
     const { resInfo } = useResMenu();
 
-    if (resInfo === null) return <ShimmerFood />;
+    if (resInfo === null) return <Shimmer />;
 
     const { name } = resInfo?.cards[2]?.card?.card?.info || {};
 
@@ -24,7 +24,7 @@ const ResMenu = () => {
             {itemCards.map((item) => (
                 <div className="w-full max-w-7xl py-16 border-t-2 border-gray-200 flex flex-col sm:flex-row justify-between items-center" key={item.card.info.id}>
                     <div className="w-[90%] sm:w-2/4 mr-0 sm:mr-16">
-                        {item.card.info.itemAttribute.vegClassifier === "VEG" ? <img className="mb-4 w-8" src={vegImg} /> : <img className="mb-4 w-8" src={nonVegImg} />}
+                        {item.card.info.itemAttribute.vegClassifier === "VEG" ? <img className="mb-4 w-8" src={vegImg} alt="veg" /> : <img className="mb-4 w-8" src={nonVegImg} alt="non veg" />}
                         <h2 className="mb-4 text-4xl font-bold">{item.card.info.name}</h2>
                         <p className="mb-4 text-4xl font-bold text-amber-600">₹{(item.card.info.defaultPrice || item.card.info.price) / 100}</p>
                         <p className="text-gray-600 text-2xl">{item.card.info.description}</p>

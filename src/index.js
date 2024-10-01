@@ -9,7 +9,7 @@ import SignIn from "./Components/SignIn";
 import Cart from "./Components/Cart";
 import ResMenu from "./Components/ResMenu";
 import Error from "./Components/Error";
-import ShimmerRestaurant from "./Components/ShimmerRestaurant";
+import Shimmer from "./Components/Shimmer";
 import "./index.css";
 
 const Grocery = lazy(() => import("./Components/Grocery"));
@@ -45,7 +45,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/grocery",
-        element: <Suspense fallback={<ShimmerRestaurant />}><Grocery /></Suspense>,
+        element: <Suspense fallback={<Shimmer />}><Grocery /></Suspense>,
       },
       {
         path: "/restaurants/:resId",

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRef } from "react";
 import FoodCard from "./FoodCard";
-import ShimmerFood from "./ShimmerFood";
+import Shimmer from "./Shimmer";
 
 const Food = () => {
     const [foodList, setFoodList] = useState([]);
@@ -17,6 +17,7 @@ const Food = () => {
             const jsonData = await response.json();
             const foodData = jsonData.data.cards[0].card.card.imageGridCards.info;
             setFoodList(foodData);
+            console.log(foodData);
         } catch (error) {
             console.error("Error fetching food list:", error);
         }
@@ -29,7 +30,7 @@ const Food = () => {
     const handleLeftClick = () => {
         foodCardsRef.current.style.transition = "1s ease-in-out";
         if (foodCardsRef && shiftRightBy <= -50) {
-            let newShift = shiftRightBy + 50;
+            let newShift = shiftRightBy + 30;
             setShiftRightBy(newShift);
         }
     };
@@ -37,22 +38,22 @@ const Food = () => {
     const handleRightClick = () => {
         foodCardsRef.current.style.transition = "1s ease-in-out";
         if (foodCardsRef && shiftRightBy >= -250) {
-            let newShift = shiftRightBy - 50;
+            let newShift = shiftRightBy - 30;
             setShiftRightBy(newShift);
         }
     };
 
     useEffect(() => {
         if (foodCardsRef.current) {
-            foodCardsRef.current.style.marginLeft = shiftRightBy + "rem";
+            foodCardsRef.current.style.marginLeft = shiftRightBy + "vw";
         }
     }, [shiftRightBy]);
 
     return foodList.length === 0 ? (
-        <ShimmerFood />
+        <Shimmer />
     ) : (
         <div className="w-full flex flex-nowrap justify-center items-center">
-            <div className="w-[90%] sm:w-[48rem] md:w-[72rem] lg:w-[96rem] mb-16 mt-8 flex flex-nowrap justify-center items-center">
+            <div className="max-w-[1024px] w-[90%] sm:w-[78%] mb-16 mt-8 flex flex-nowrap justify-center items-center">
                 <div className="w-full">
                     <div className="h-[4rem] py-[4rem] flex flex-nowrap justify-between items-center">
                         <h2 className="text-3xl sm:text-4xl font-bold">What's on your mind?</h2>
@@ -65,8 +66,8 @@ const Food = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="py-4 w-full flex overflow-x-scroll">
-                        <div className="flex justify-left items-center shrink-0 gap-8 md:gap-12 lg:gap-16" ref={foodCardsRef}>
+                    <div className="py-4 flex overflow-x-scroll">
+                        <div className="flex justify-left items-center shrink-0" ref={foodCardsRef}>
                             {foodList.map((food) => (
                                 <FoodCard key={food.id} {...food} />
                             ))}
