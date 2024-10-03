@@ -57,16 +57,14 @@ const Food = () => {
                 <div className="w-full">
                     <div className="h-[4rem] py-[4rem] flex flex-nowrap justify-between items-center">
                         <h2 className="text-3xl sm:text-4xl font-bold">What's on your mind?</h2>
-                        <!--
-                        <div>
+                        {/* <div>
                             <button className="h-[3rem] sm:h-[5rem] w-[3rem] sm:w-[5rem] text-lg sm:text-2xl border-none outline-none bg-[#f1f1f1] border-2 border-[#f1f1f1] rounded-[3rem] cursor-pointer" onClick={handleLeftClick}>
                                 <i className="fa-solid fa-chevron-left"></i>
                             </button>
                             <button className="h-[3rem] sm:h-[5rem] w-[3rem] sm:w-[5rem] ml-[1.6rem] sm:ml-[3.2rem] text-lg sm:text-2xl border-none outline-none bg-[#f1f1f1] border-2 border-[#f1f1f1] rounded-[3rem] cursor-pointer" onClick={handleRightClick}>
                                 <i className="fa-solid fa-chevron-right"></i>
                             </button>
-                        </div>
-                        -->
+                        </div> */}
                     </div>
                     <div className="py-4 flex overflow-x-scroll">
                         <div className="flex justify-left items-center shrink-0" ref={foodCardsRef}>
