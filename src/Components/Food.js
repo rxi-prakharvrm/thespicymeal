@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { useRef } from "react";
-import FoodCard from "./FoodCard";
+import React, { useState, useEffect, useRef } from "react";
+import FoodCard from './FoodCard';
 import Shimmer from "./Shimmer";
 
 const Food = () => {
     const [foodList, setFoodList] = useState([]);
-    const [shiftRightBy, setShiftRightBy] = useState(0);
-
-    const foodCardsRef = useRef(null);
+    const [counter, setCounter] = useState(0);
+    const foodCardContainerRef = useRef(null);
+    const itemsToSlide = 3;
 
     const fetchFoodList = async () => {
         try {
@@ -17,7 +16,6 @@ const Food = () => {
             const jsonData = await response.json();
             const foodData = jsonData.data.cards[0].card.card.imageGridCards.info;
             setFoodList(foodData);
-            console.log(foodData);
         } catch (error) {
             console.error("Error fetching food list:", error);
         }
@@ -27,27 +25,25 @@ const Food = () => {
         fetchFoodList();
     }, []);
 
-    const handleLeftClick = () => {
-        foodCardsRef.current.style.transition = "1s ease-in-out";
-        if (foodCardsRef && shiftRightBy <= -50) {
-            let newShift = shiftRightBy + 30;
-            setShiftRightBy(newShift);
-        }
-    };
-
-    const handleRightClick = () => {
-        foodCardsRef.current.style.transition = "1s ease-in-out";
-        if (foodCardsRef && shiftRightBy >= -250) {
-            let newShift = shiftRightBy - 30;
-            setShiftRightBy(newShift);
-        }
+    // Circular sliding logic
+    const handleSlide = () => {
+        setCounter(prevCounter => {
+            const nextCounter = prevCounter + itemsToSlide;
+            return nextCounter >= foodList.length ? (nextCounter % foodList.length) : nextCounter;
+        });
     };
 
     useEffect(() => {
-        if (foodCardsRef.current) {
-            foodCardsRef.current.style.marginLeft = shiftRightBy + "vw";
+        const intervalId = setInterval(handleSlide, 5000);
+
+        return () => clearInterval(intervalId);
+    }, [foodList.length]);
+
+    useEffect(() => {
+        if (foodCardContainerRef.current) {
+            foodCardContainerRef.current.style.transform = `translateX(-${counter * (100 / foodList.length)}%)`;
         }
-    }, [shiftRightBy]);
+    }, [counter, foodList.length]);
 
     return foodList.length === 0 ? (
         <Shimmer />
@@ -57,19 +53,26 @@ const Food = () => {
                 <div className="w-full">
                     <div className="h-[4rem] py-[4rem] flex flex-nowrap justify-between items-center">
                         <h2 className="text-3xl sm:text-4xl font-bold">What's on your mind?</h2>
-                        {/* <div>
-                            <button className="h-[3rem] sm:h-[5rem] w-[3rem] sm:w-[5rem] text-lg sm:text-2xl border-none outline-none bg-[#f1f1f1] border-2 border-[#f1f1f1] rounded-[3rem] cursor-pointer" onClick={handleLeftClick}>
-                                <i className="fa-solid fa-chevron-left"></i>
-                            </button>
-                            <button className="h-[3rem] sm:h-[5rem] w-[3rem] sm:w-[5rem] ml-[1.6rem] sm:ml-[3.2rem] text-lg sm:text-2xl border-none outline-none bg-[#f1f1f1] border-2 border-[#f1f1f1] rounded-[3rem] cursor-pointer" onClick={handleRightClick}>
-                                <i className="fa-solid fa-chevron-right"></i>
-                            </button>
-                        </div> */}
                     </div>
-                    <div className="py-4 flex overflow-x-scroll">
-                        <div className="flex justify-left items-center shrink-0" ref={foodCardsRef}>
-                            {foodList.map((food) => (
-                                <FoodCard key={food.id} {...food} />
+                    <div className="relative overflow-hidden w-full">
+                        <div
+                            className="flex transition-transform duration-500 ease-in-out"
+                            style={{
+                                width: `${foodList.length * 100 / 5}%`, // Adjust container width based on 5 images at a time
+                                transform: `translateX(-${counter * (100 / foodList.length)}%)`
+                            }}
+                            ref={foodCardContainerRef}
+                        >
+                            {foodList.map((food, index) => (
+                                <div
+                                    key={index}
+                                    className="flex-none text-center"
+                                    style={{
+                                        width: `${100 / foodList.length}%`
+                                    }}
+                                >
+                                    <FoodCard key={food.id} {...food} />
+                                </div>
                             ))}
                         </div>
                     </div>
