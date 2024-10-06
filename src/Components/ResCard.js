@@ -22,9 +22,8 @@ const ResCard = ({
         />
       </div>
       <div className="w-full p-8 text-left">
-        <div className="h-[4rem] w-full flex justify-between 
-        pb-8">
-          <h3 className="text-3xl text-gray-700 font-semibold">{name}</h3>
+        <div className="w-full flex justify-between pb-8">
+          <h3 className="text-3xl text-gray-700 font-semibold box line-clamp-1 box-orient-vertical overflow-hidden">{name}</h3>
           <span className="ml-4 whitespace-nowrap text-gray-500">
             <h4>
               <span className="text-yellow-500 mr-4">
@@ -34,9 +33,9 @@ const ResCard = ({
             </h4>
           </span>
         </div>
-        <div className="h-[3.5rem] text-2xl text-gray-600 font-semibold flex items-center">
-          <h4 className="text-gray-500 text-left">
-            {cuisines.slice(0, 2).join(", ")}
+        <div className="text-2xl text-gray-600 font-semibold">
+          <h4 className="text-gray-500 text-left box line-clamp-1 box-orient-vertical overflow-hidden">
+            {cuisines.slice(0, 4).join(", ")}
           </h4>
           <h4 className="text-gray-500 px-4">{area}</h4>
         </div>

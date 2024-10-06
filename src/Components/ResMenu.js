@@ -28,26 +28,28 @@ const ResMenu = () => {
 
     return (
         <div className="max-w-[72rem] w-[90%] p-4 sm:p-8 md:p-12 lg:p-16 mx-auto flex flex-col justify-center items-center">
-            <h1 className="my-24 font-extrabold text-4xl md:text-6xl text-center text-gray-800">{name}</h1>
+            <h1 className="my-24 font-extrabold text-4xl md:text-6xl text-center text-gray-800 bg-[#f1f1f1]">{name}</h1>
             {itemCards.map((item) => (
-                <div className="w-full max-w-7xl py-16 border-t-2 border-gray-200 flex flex-col sm:flex-row justify-between items-center" key={item.card.info.id}>
-                    <div className="w-[90%] sm:w-2/4 mr-0 sm:mr-16">
-                        {item.card.info.itemAttribute.vegClassifier === "VEG" ? <img className="mb-4 w-8" src={vegImg} alt="veg" /> : <img className="mb-4 w-8" src={nonVegImg} alt="non veg" />}
-                        <h2 className="mb-4 text-4xl font-bold">{item.card.info.name}</h2>
-                        <p className="mb-4 text-4xl font-bold text-amber-600">₹{(item.card.info.defaultPrice || item.card.info.price) / 100}</p>
-                        <p className="text-gray-600 text-2xl">{item.card.info.description}</p>
-                    </div>
-                    <div className="relative">
+                <div className="w-full py-16 border-t-2 border-gray-200 flex flex-col sm:flex-row justify-between" key={item.card.info.id}>
+                    <div className="sm:mr-8 relative w-[180px] h-[180px] rounded-2xl overflow-hidden inline-block align-center">
                         {item.card.info.imageId !== undefined ? (
                             <img
-                                className="mt-12 sm:mt-0 rounded-xl w-[20rem] h-[20rem] shadow-2xl shadow-gray-400 background-cover"
+                                className="shadow-lg shadow-gray-300 w-[180px] h-[180px] object-cover scale-110 bg-blend-darken"
                                 src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${item.card.info.imageId}`}
                                 alt={item.card.info.name}
                             />
                         ) : 
-                            <div class="w-full h-full px-16 py-24 rounded-xl bg-gray-400 text-gray-700 text-4xl text-center font-bold shadow-2xl shadow-gray-400">No preview</div>
+                            <div class="w-full h-full px-16 py-24 rounded-xl bg-gray-400 text-gray-700 text-4xl text-center font-bold shadow-lg shadow-gray-400">No preview</div>
                         }
-                        <button className="px-8 py-2 bg-white absolute -bottom-8 left-1/2 -translate-x-1/2 border-2 border-green-600 rounded-lg" onClick={() => addToCart(item.card.info)} >
+                    </div>
+                    <div className="w-full sm:w-[64%] mt-8 sm:mt-0">
+                        <div className="flex justify-between">
+                            <h2 className="mb-4 text-3xl sm:text-4xl font-semibold text-gray-700">{item.card.info.name}</h2>
+                            {item.card.info.itemAttribute.vegClassifier === "VEG" ? <img className="mb-4 ml-4 w-[20px] h-[20px]" src={vegImg} alt="veg" /> : <img className="mb-4 ml-4 w-[20px] h-[20px]" src={nonVegImg} alt="non veg" />}
+                        </div>
+                        <p className="mb-4 text-2xl sm:text-3xl text-gray-700">₹{(item.card.info.defaultPrice || item.card.info.price) / 100}</p>
+                        <p className="text-gray-600 text-2xl box line-clamp-3 box-orient-vertical overflow-hidden">{item.card.info.description}</p>
+                        <button className="px-8 py-2 mt-4 bg-white border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white rounded-lg transition-all ease-in duration-50" onClick={() => addToCart(item.card.info)} >
                             ADD
                         </button>
                     </div>

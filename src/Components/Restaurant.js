@@ -34,7 +34,7 @@ const Restaurant = () => {
   return listOfRes.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="py-16 text-center  bg-[#f1f1f1]">
+    <div className="py-16 text-center bg-[#f1f1f1]">
       {/* Filter restraunts based on its name */}
       <div className="w-[90%] mx-auto flex justify-center items-center">
         <input
