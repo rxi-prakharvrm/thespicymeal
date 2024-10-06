@@ -14,10 +14,11 @@ const Restaurant = () => {
   // This custom hook is responsible for fetching the restraunt data from the api and updating state variables listOfRes and filteredListOfRes
   const { listOfRes, filteredListOfRes, setFilteredListOfRes } =
     useRestaurant();
-  console.log(listOfRes);
   const [searchResults, setSearchResults] = useState([]);
 
   const searchcall = () => {
+    console.log("searchcall called");
+    console.log(listOfRes);
     const filteredListOfRes = listOfRes.filter((res) => {
       return res.info.name.toLowerCase().includes(searchText.toLowerCase());
     });
@@ -27,11 +28,7 @@ const Restaurant = () => {
 
   useEffect(() => {
     searchcall();
-  }, [searchText]);
-
-  useEffect(() => {
-    setSearchResults(listOfRes);
-  }, []);
+  }, [searchText, listOfRes]);
 
   // If listOfRes contains nothing, show shimmer UI
   return listOfRes.length === 0 ? (
