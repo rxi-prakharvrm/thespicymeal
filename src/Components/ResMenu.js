@@ -1,9 +1,12 @@
+import { useContext } from 'react';
+import { MyContext } from './MyContext';
 import Shimmer from './Shimmer';
 import useResMenu from '../utils/useResMenu';
 import vegImg from '../images/vegetarian.png';
 import nonVegImg from '../images/non-vegetarian.png';
 
 const ResMenu = () => {
+    const { cartItems, setCartItems } = useContext(MyContext);
     const { resInfo } = useResMenu();
 
     if (resInfo === null) return <Shimmer />;
@@ -17,6 +20,11 @@ const ResMenu = () => {
     }
 
     if (!itemCards) return <div>No items available</div>;
+
+    const addToCart = (item) => {
+        setCartItems([...cartItems, item]);
+        console.log(cartItems);
+    }
 
     return (
         <div className="max-w-[72rem] w-[90%] p-4 sm:p-8 md:p-12 lg:p-16 mx-auto flex flex-col justify-center items-center">
@@ -39,7 +47,7 @@ const ResMenu = () => {
                         ) : 
                             <div class="w-full h-full px-16 py-24 rounded-xl bg-gray-400 text-gray-700 text-4xl text-center font-bold shadow-2xl shadow-gray-400">No preview</div>
                         }
-                        <button className="px-8 py-2 bg-white absolute -bottom-8 left-1/2 -translate-x-1/2 border-2 border-green-600 rounded-lg">
+                        <button className="px-8 py-2 bg-white absolute -bottom-8 left-1/2 -translate-x-1/2 border-2 border-green-600 rounded-lg" onClick={() => addToCart(item.card.info)} >
                             ADD
                         </button>
                     </div>
