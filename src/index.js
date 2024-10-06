@@ -12,6 +12,8 @@ import Error from "./Components/Error";
 import Shimmer from "./Components/Shimmer";
 import "./index.css";
 
+import ParentComponent from "./Components/ParentComponent";
+
 const Grocery = lazy(() => import("./Components/Grocery"));
 
 const appRouter = createBrowserRouter([
@@ -45,7 +47,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/grocery",
-        element: <Suspense fallback={<Shimmer />}><Grocery /></Suspense>,
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <Grocery />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurants/:resId",
@@ -66,4 +72,8 @@ function App() {
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} />);
+root.render(
+  <ParentComponent>
+    <RouterProvider router={appRouter} />
+  </ParentComponent>
+);

@@ -1,17 +1,13 @@
 import { useState } from "react";
 import { MyContext } from "./MyContext";
-import ResMenu from "./ResMenu";
-import Cart from "./Cart";
 
-function ParentComponent() {
+function ParentComponent({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
   return (
     <div>
-      {/* Provide the cartItems and setCartItems state to child components via context */}
       <MyContext.Provider value={{ cartItems, setCartItems }}>
-        <ResMenu />
-        <Cart />
+        {children}
       </MyContext.Provider>
     </div>
   );
