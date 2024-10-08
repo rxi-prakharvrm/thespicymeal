@@ -21,13 +21,16 @@ const ResMenu = () => {
 
     if (!itemCards) return <div>No items available</div>;
 
-    const addToCart = (item) => {
+    const addToCart = (e, item) => {
+        e.target.innerHTML = "ADDED";
+        e.target.style.color = "white";
+        e.target.style.backgroundColor = "green";
         setCartItems([...cartItems, item]);
         console.log(cartItems);
     }
 
     return (
-        <div className="w-full bg-[#f1f1f1]">            
+        <div className="w-full bg-[#f7f7f7]">            
             <div className="max-w-[72rem] w-[90%] p-4 sm:p-8 md:p-12 lg:p-16 mx-auto flex flex-col justify-center items-center">
                 <h1 className="my-24 font-extrabold text-4xl md:text-6xl text-center text-gray-800">{name}</h1>
                 {itemCards.map((item) => (
@@ -50,7 +53,7 @@ const ResMenu = () => {
                             </div>
                             <p className="mb-4 text-2xl sm:text-3xl text-gray-700">₹{(item.card.info.defaultPrice || item.card.info.price) / 100}</p>
                             <p className="text-gray-600 text-2xl box line-clamp-3 box-orient-vertical overflow-hidden">{item.card.info.description}</p>
-                            <button className="px-8 py-2 mt-4 bg-white border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white rounded-lg transition-all ease-in duration-50" onClick={() => addToCart(item.card.info)} >
+                            <button className="w-[12rem] h-[3.5rem] flex justify-center items-center mt-4 bg-white border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white rounded-lg transition-all ease-in duration-50" onClick={(e) => addToCart(e, item.card.info)} >
                                 ADD
                             </button>
                         </div>

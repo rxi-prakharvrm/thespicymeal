@@ -73,9 +73,9 @@ function App() {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <ParentComponent>
       <RouterProvider router={appRouter} />
     </ParentComponent>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
